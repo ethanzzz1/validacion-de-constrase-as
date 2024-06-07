@@ -49,8 +49,11 @@ class MainActivity : AppCompatActivity() {
                         //validar contraseña
                         if(txtClave.text.length<6 || txtClave.text.matches("[0-9]+".toRegex())){
                             Toast.makeText(this, "La clave debe contener mas de 6 dijitos", Toast.LENGTH_SHORT).show()
-
-
+                        }else{
+                            //validar DUI
+                            if (txtDUI.text.length>10 && txtClave.text.matches("[0-9.-]+".toRegex())){
+                                Toast.makeText(this, "Ingrese un dui correcto", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }
